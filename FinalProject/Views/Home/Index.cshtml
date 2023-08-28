@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Text to Speech Example";
+}
+<div>
+    <h1>Text to Speech Example</h1>
+    <textarea id="textToSpeak" rows="4" cols="50">Hello, world!</textarea>
+    <button id="speakButton">Speak</button>
+
+    <!-- Add Buy Premium button -->
+    <a href="@Url.Action("Index", "Payment")" class="btn btn-primary">Buy Premium</a>
+</div>
+
+<script>
+    const speakButton = document.getElementById("speakButton");
+    const textToSpeak = document.getElementById("textToSpeak");
+
+    speakButton.addEventListener("click", () => {
+        const message = new SpeechSynthesisUtterance(textToSpeak.value);
+        window.speechSynthesis.speak(message);
+    });
+</script>

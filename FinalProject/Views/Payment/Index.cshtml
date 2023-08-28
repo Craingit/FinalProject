@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Buy Premium";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Use your layout if you have one
+}
+
+<div class="container">
+    <h1>Buy Premium</h1>
+
+    <form method="post" action="@Url.Action("ProcessPayment")">
+        <!-- Payment form fields (replace with actual fields) -->
+        <div class="form-group">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" name="cardNumber" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="expirationDate">Expiration Date</label>
+            <input type="text" id="expirationDate" name="expirationDate" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" class="form-control" required>
+        </div>
+
+        <!-- Add more payment fields as needed -->
+
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+</div>
